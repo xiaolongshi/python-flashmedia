@@ -16,6 +16,7 @@ class FLV(object):
         try:
             tag = Tag.deserialize(self.fd, strict=self.strict)
         except IOError:
+            print("IO Error")
             raise StopIteration
 
         return tag
